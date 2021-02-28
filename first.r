@@ -147,3 +147,19 @@ colMeans(myMatrix)
 rowMeans(myMatrix)
 
 t(t(myMatrix)/colSums(myMatrix)) #element-wise calculation
+
+
+######################
+#Factors
+######################
+myFactor<- factor(c("Double Story",
+                    "Single Story", 
+                    "Double Story",
+                    "Skyscrapper"),
+                  levels= c("Single Story",
+                            "Double Story",
+                            "Skyscrapper"),
+                  ordered = TRUE)
+typeof(myFactor)
+str(myFactor)
+
