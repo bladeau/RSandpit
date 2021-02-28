@@ -7,7 +7,7 @@ require(useful)
 #Variables
 ###########
 
-#assigning Numeric Variables
+#assigning
 x<-1
 a<-b<-7
 assign("c",4)
@@ -18,9 +18,11 @@ class(b)
 
 #Character data is represented as characters and factors
 word<-"Chacters"
-aFactor<- factor("aFactor")
+aFactor<- factor("word")
 nchar(word) 
 nchar(28)
+aFactor
+
 
 #Date and Date Time
 date1 <- as.Date("2021-02-27")
@@ -46,7 +48,7 @@ myVecX <- c(1,2,3,4,5,6,7,8,9,10)
 myVecY <- -5:4
 
 
-#element wise operations
+#element-wise operations
 myVecX%%2
 myVecX^myVecY
 
@@ -109,3 +111,39 @@ theDF$myVecX
 theDF[1,2]
 theDF[1:3,1:2]
 theDF[1:3,c(1,3)]
+
+
+draw<- function(){
+  deck <-c("Duke","Assassin", "Captain")
+  hand<- sample(deck, size = 2, replace = TRUE)
+  print(hand)
+}
+draw()
+
+
+######################
+#Vec to Matrix
+######################
+class(myVecX)
+typeof(myVecX)
+dim(myVecX)<- c(2,5) #convert
+class(myVecX)
+typeof(myVecX)
+
+
+######################
+#Matrix
+######################
+myMatrix<- matrix(c(171.5, 292, 281.6, 460.6, 139.3, 288),
+                  nrow = 3, byrow = TRUE,
+                  dimnames = list(c("The Matrix", "Reloaded", 
+                                    "Revolutions"), 
+                                  c("US", "Worldwide")))
+
+myMatrix<-rbind(myMatrix, "Matrix Cartoon"=c(120, 140))
+colSums(myMatrix)
+rowSums(myMatrix)
+colMeans(myMatrix)
+rowMeans(myMatrix)
+
+t(t(myMatrix)/colSums(myMatrix)) #element-wise calculation
